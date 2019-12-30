@@ -1,0 +1,65 @@
+$height: 2rem;
+.input-wrapper {
+  position: relative;
+  min-width: 5.625rem;
+  padding: 0.5rem 0 1.5rem;
+
+  .input {
+    position: relative;
+    margin: 0;
+    outline: 0;
+
+    input {
+      width: 100%;
+      height: $height;
+      line-height: 1.3125rem;
+      text-overflow: ellipsis;
+      white-space: normal;
+      overflow: hidden;
+      color: #323232;
+      outline: 0;
+      padding: 0.25rem;
+      cursor: pointer;
+      font-size: inherit;
+      box-sizing: border-box;
+
+      &:focus {
+        border: 2px solid #0079cc;
+      }
+
+      &:disabled {
+        cursor: default;
+        color: #93a1aa;
+        border: solid 1px #93a1aa;
+      }
+
+      &:disabled + .dropdown-arrow {
+        color: #93a1aa;
+      }
+    }
+
+    .dropdown-arrow {
+      position: absolute;
+      color: inherit;
+      right: 5px;
+      top: $height/4;
+      cursor: pointer;
+    }
+
+    &.required label:after {
+      color: red;
+      content: "*";
+      position: relative;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+}
+
+.dropdown-options-container {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+  display: block;
+  overflow: auto;
+}
